@@ -1,6 +1,8 @@
 #include "path.h"
 #include "mapper.h"
-/*
+
+#define	STEP_TIME	18	//Ms between steps.
+
 mapper percentToAngle(0,100,0,90);
 
 basePath::basePath() {

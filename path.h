@@ -1,6 +1,9 @@
 #ifndef path_h
 #define path_h
-/*
+
+#include "trapMove.h"
+
+
 class basePath {
 
 	public:
@@ -17,5 +20,5 @@ class basePath {
 				float halfDist;
 				float	rampDist;
 	};			
-*/				
+			
 #endif
