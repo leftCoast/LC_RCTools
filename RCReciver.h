@@ -1,6 +1,11 @@
 #ifndef RCReciever_h 
 #define RCReciever_h
 
+// This code currently does not work. There was an Arduino update that broke it and I've
+// not yet been back to see what's wrong. That and the code it uses has been depreciated.
+// (Sigh..)
+
+/*
 #include <arduino.h>
 
 #define TIMEOUT_MICROS 25000
@@ -28,6 +33,7 @@ class reciverPin {
 };
 
 extern reciverPin* pinList[MAX_PINS];
+*/
 
 #endif // RCReciever_h
 

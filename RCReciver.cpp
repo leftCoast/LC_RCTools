@@ -1,5 +1,6 @@
 #include "RCReciver.h"
 
+/*
 #ifndef PinChangeInt_h
 #define LIBCALL_PINCHANGEINT
 #include <PinChangeInt.h>
@@ -54,7 +55,7 @@ unsigned long reciverPin::pinResult(void) {
        return result;
 }
 
-/*
+
 void reciverPin::dataDump(void) {
    
    Serial.print("pin = "); Serial.println(pin);
@@ -71,7 +72,7 @@ void reciverPin::dataDump(void) {
    Serial.print("result = "); Serial.println(result);
    Serial.println();
 }
-*/
+
 
 void reciverPin::handeler(void) {
     switch(currentState) {
@@ -107,4 +108,4 @@ void reciverPin::attachHandler(byte state) {
    currentState = state;
 }
 
-
+*/
