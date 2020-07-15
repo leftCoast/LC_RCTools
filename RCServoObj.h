@@ -9,13 +9,16 @@
 
 
 
-#define   DEF_SEC_PER_60_DEG .10    //.16 seconds / 60deg. Avarage speed spec. used for RC servos. (Smaller value is faster)
-#define   DEF_SWING_DEG       90   // Typical servo rotates 180 degrees lock to lock.
+#define   DEF_SEC_PER_60_DEG .16    //.16 seconds / 60deg. Avarage speed spec. used for RC servos. (Smaller value is faster)
+#define   DEF_SWING_DEG       90   // Typical servo rotates 90 degrees lock to lock.
 
 // Formula for maximum servo velocity : Percent swing / milisecond = 60 / (SecPer60 * SwingDeg * 10)
-// You don't really need to know this to use the code. Its just here for those that need to go under the hood to fix things.
+// You don't really need to know this to use the code. Its just here for those that have to
+// go under the hood to fix things.
 
 
+// There is a default to this servoType bit. If you don't want to deal with it you don't
+// need to. The default will probably work just fine.
 class servoType {
 
    public:
@@ -30,6 +33,10 @@ class servoType {
 };
 
 
+// Here is the servo object. Create one using the pin number its hooked to. Then you can do
+// move(0..100%) or controlledMove(0..100%, 0..100%, 0..100%) Position, velocity, acceleration.
+// While doing a controlled move, you can call moving() to see if the move is still in
+// progress.
 class RCServoObj :   public linkListObj,
                      public timeObj {
 
@@ -65,6 +72,8 @@ class RCServoObj :   public linkListObj,
 };
 
 
+// Don't worry about this bit. Its the controller behind the scenes that manages all your
+// servos.
 class servoController : public linkList,
                         public squareWave {
 
@@ -86,6 +95,6 @@ class servoController : public linkList,
 
 };
 
-extern servoController servoControl;
+extern servoController servoControl;	// Servo manager. Runs automatically in the background.
 
 #endif
